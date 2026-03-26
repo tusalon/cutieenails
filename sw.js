@@ -1,22 +1,22 @@
-// sw.js - Service Worker para Angel Nails
+// sw.js - Service Worker para CUTIEENAILS 
 
-const CACHE_NAME = 'angelnails-v1';
+const CACHE_NAME = 'cutieenails-v1';
 const urlsToCache = [
-  '/angelnails/',
-  '/angelnails/index.html',
-  '/angelnails/admin.html',
-  '/angelnails/admin-login.html',
-  '/angelnails/setup-wizard.html',
-  '/angelnails/editar-negocio.html',
-  '/angelnails/manifest.json',
-  '/angelnails/icons/icon-72x72.png',
-  '/angelnails/icons/icon-96x96.png',
-  '/angelnails/icons/icon-128x128.png',
-  '/angelnails/icons/icon-144x144.png',
-  '/angelnails/icons/icon-152x152.png',
-  '/angelnails/icons/icon-192x192.png',
-  '/angelnails/icons/icon-384x384.png',
-  '/angelnails/icons/icon-512x512.png'
+  '/cutieenails/',
+  '/cutieenails/index.html',
+  '/cutieenails/admin.html',
+  '/cutieenails/admin-login.html',
+  '/cutieenails/setup-wizard.html',
+  '/cutieenails/editar-negocio.html',
+  '/cutieenails/manifest.json',
+  '/cutieenails/icons/icon-72x72.png',
+  '/cutieenails/icons/icon-96x96.png',
+  '/cutieenails/icons/icon-128x128.png',
+  '/cutieenails/icons/icon-144x144.png',
+  '/cutieenails/icons/icon-152x152.png',
+  '/cutieenails/icons/icon-192x192.png',
+  '/cutieenails/icons/icon-384x384.png',
+  '/cutieenails/icons/icon-512x512.png'
 ];
 
 // ============================================
@@ -108,7 +108,7 @@ self.addEventListener('fetch', event => {
           }
           // Si no hay cache y es imagen, devolver icon por defecto
           if (event.request.url.match(/\.(jpg|jpeg|png|gif|svg|webp)$/)) {
-            return caches.match('/angelnails/icons/icon-192x192.png');
+            return caches.match('/cutieenails/icons/icon-192x192.png');
           }
           return new Response('Error de red', { status: 408 });
         });
@@ -138,6 +138,6 @@ self.addEventListener('message', event => {
   }
 });
 
-console.log('✅ Service Worker configurado para Angel Nails');
+console.log('✅ Service Worker configurado para CUTIEENAILS ');
 console.log('📦 Cache:', CACHE_NAME);
 console.log('📄 Archivos a cachear:', urlsToCache.length);
